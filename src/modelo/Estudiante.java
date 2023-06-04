@@ -1,25 +1,17 @@
 package modelo;
 
 public class Estudiante {
+    private String rol;
     private String nombre;
     private int codigo;
     private String nip;
     private int edad;
     private String genero;
     private String nacionalidad;
-    private int creditos;
     private String centroUniversitario;
     private String carrera;
-    private Materia materias;
     private String correo;
 
-    public Materia getMaterias() {
-        return materias;
-    }
-
-    public void setMaterias(Materia materias) {
-        this.materias = materias;
-    }
 
     public String getCorreo() {
         return correo;
@@ -28,15 +20,6 @@ public class Estudiante {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    public int getCreditos() {
-        return creditos;
-    }
-
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
-    }
-
     public String getCarrera() {
         return carrera;
     }
@@ -99,5 +82,13 @@ public class Estudiante {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

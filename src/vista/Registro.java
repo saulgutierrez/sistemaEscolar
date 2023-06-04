@@ -1,6 +1,13 @@
 package vista;
 
+import controlador.Conexion;
 import java.awt.event.ItemEvent;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.*;
+import javax.swing.JOptionPane;
+import modelo.Estudiante;
 
 public class Registro extends javax.swing.JFrame {
 
@@ -57,7 +64,7 @@ public class Registro extends javax.swing.JFrame {
         rolComboBox.setBackground(new java.awt.Color(51, 51, 51));
         rolComboBox.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         rolComboBox.setForeground(new java.awt.Color(255, 255, 255));
-        rolComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor" }));
+        rolComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor", "Administrador" }));
         rolComboBox.setBorder(null);
         rolComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -194,6 +201,11 @@ public class Registro extends javax.swing.JFrame {
 
         btnRegistrar.setBackground(new java.awt.Color(51, 51, 51));
         btnRegistrar.setPreferredSize(new java.awt.Dimension(109, 28));
+        btnRegistrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegistrarMouseClicked(evt);
+            }
+        });
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Registrar");
@@ -435,12 +447,112 @@ public class Registro extends javax.swing.JFrame {
                 departamentoLabel.setVisible(true);
                 departamentoTextField.setVisible(true);
             }
+            case 2 -> {
+                edadLabel.setVisible(false);
+                edadComboBox.setVisible(false);
+                generoLabel.setVisible(false);
+                generoComboBox.setVisible(false);
+                nacionalidadLabel.setVisible(false);
+                nacionalidadComboBox.setVisible(false);
+                carreraLabel.setText("Titulo");
+                departamentoLabel.setVisible(true);
+                departamentoTextField.setVisible(true);
+            }
             
             default -> {
                 
             }
         }
     }//GEN-LAST:event_rolComboBoxActionPerformed
+
+    private void btnRegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegistrarMouseClicked
+        // TODO add your handling code here:
+        Connection conn = null;
+        Conexion con = new Conexion();
+        
+        if(nombreTextField.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(codigoTextField.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(nipTextField.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(generoComboBox.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(nacionalidadComboBox.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(correoTextField.getText().length() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        if(centroComboBox.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            return;
+        }
+        
+        try {
+            conn = (Connection) con.conexionSinLogin();
+            if (!con.isConnect(conn)) {
+                Estudiante estudiante = new Estudiante();
+                estudiante.setRol(rolComboBox.getSelectedItem().toString());
+                estudiante.setNombre(nombreTextField.getText());
+                estudiante.setCodigo(Integer.parseInt(codigoTextField.getText()));
+                estudiante.setNip(nipTextField.getText());
+                estudiante.setEdad(Integer.parseInt(edadComboBox.getSelectedItem().toString()));
+                estudiante.setGenero(generoComboBox.getSelectedItem().toString());
+                estudiante.setNacionalidad(nacionalidadComboBox.getSelectedItem().toString());
+                estudiante.setCorreo(correoTextField.getText());
+                estudiante.setCentroUniversitario(centroComboBox.getSelectedItem().toString());
+                estudiante.setCarrera(carreraComboBox.getSelectedItem().toString());
+                
+                PreparedStatement statement = (PreparedStatement) conn.prepareStatement("INSERT INTO estudiante VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+                statement.setString(1, estudiante.getRol());
+                statement.setString(2, estudiante.getNombre());
+                statement.setInt(3, estudiante.getCodigo());
+                statement.setString(4, estudiante.getNip());
+                statement.setInt(5, estudiante.getEdad());
+                statement.setString(6, estudiante.getGenero());
+                statement.setString(7, estudiante.getNacionalidad());
+                statement.setString(8, estudiante.getCorreo());
+                statement.setString(9, estudiante.getCentroUniversitario());
+                statement.setString(10, estudiante.getCarrera());
+                
+                statement.executeUpdate();
+                
+                JOptionPane.showMessageDialog(null, "Usario registrado correctamente");
+                
+                nombreTextField.setText("");
+                codigoTextField.setText("");
+                nipTextField.setText("");
+                edadComboBox.setSelectedIndex(0);
+                generoComboBox.setSelectedIndex(0);
+                nacionalidadComboBox.setSelectedIndex(0);
+                correoTextField.setText("");
+                centroComboBox.setSelectedIndex(0);
+                carreraComboBox.setSelectedIndex(0);
+                
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnRegistrarMouseClicked
 
     /**
      * @param args the command line arguments

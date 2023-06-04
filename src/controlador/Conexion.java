@@ -1,10 +1,10 @@
 package controlador;
 import java.sql.PreparedStatement;
-import java.sql.Connection;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Connection;
 import vista.Dashboard;
 
 public class Conexion {
@@ -15,14 +15,13 @@ public class Conexion {
     String pass = "admin";
     String ip = "localhost";
     String puerto = "3307";
-    String driver = "com.mysql.cj.jdbc.Driver";
-    
+    String driver = "com.mysql.jdbc.Connection";
     String cadena = "jdbc:mysql://"+ip+":"+puerto+"/"+db;
     
     public Connection conexion(String codigoAlumno, String claveAlumno) throws ClassNotFoundException {
         try {
             Class.forName(driver);
-            conn = DriverManager.getConnection(cadena, user, pass);
+            conn =  DriverManager.getConnection(cadena, user, pass);
             ps = conn.prepareStatement("SELECT `codigo`, `nip` FROM estudiante WHERE `codigo` = ? AND `nip` = ?");
             ps.setString(1, codigoAlumno);
             ps.setString(2, claveAlumno);
@@ -42,6 +41,17 @@ public class Conexion {
         }
         return conn;
     }
+    
+    public Connection conexionSinLogin() throws ClassNotFoundException, SQLException {
+        try {
+            Class.forName(driver);
+            conn = (Connection) DriverManager.getConnection(cadena, user, pass);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error de conexion con el servidor"+e.toString());
+           
+    }
+    return conn;
+ }
     
     public boolean isConnect(Connection conn) throws SQLException {
         return this.conn.isClosed();

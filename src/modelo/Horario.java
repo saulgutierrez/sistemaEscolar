@@ -2,10 +2,11 @@ package modelo;
 
 public class Horario {
     private Estudiante estudiante;
-    private Materia materia;
+    private Materia materias[];
     private Profesor profesor;
     private String dias[] = new String[6];
     private String hora;
+    private int creditos;
 
     public Estudiante getEstudiante() {
         return estudiante;
@@ -13,14 +14,6 @@ public class Horario {
 
     public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
-    }
-
-    public Materia getMateria() {
-        return materia;
-    }
-
-    public void setMateria(Materia materia) {
-        this.materia = materia;
     }
 
     public Profesor getProfesor() {
@@ -45,5 +38,21 @@ public class Horario {
 
     public void setHora(String hora) {
         this.hora = hora;
+    }
+
+    public int getCreditos() {
+        return creditos;
+    }
+
+    public void setCreditos(int creditos) {
+        this.creditos = creditos;
+    }
+
+    public Materia[] getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(Materia[] materias) {
+        this.materias = materias;
     }
 }

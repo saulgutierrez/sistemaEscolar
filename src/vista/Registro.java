@@ -534,7 +534,7 @@ public class Registro extends javax.swing.JFrame {
                 
                 statement.executeUpdate();
                 
-                JOptionPane.showMessageDialog(null, "Usario registrado correctamente");
+                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
                 
                 nombreTextField.setText("");
                 codigoTextField.setText("");

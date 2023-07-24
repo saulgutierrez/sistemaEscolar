@@ -4,7 +4,13 @@
  */
 package vista;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Connection;
+import controlador.Conexion;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -44,6 +50,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btn_cerrrarSesion = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        btn_perfil = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        nombreAlumnoLabel = new javax.swing.JLabel();
+        contentPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +101,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         btn_alumnos.setBackground(new java.awt.Color(70, 73, 75));
         btn_alumnos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_alumnosMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btn_alumnosMouseEntered(evt);
             }
@@ -298,15 +312,95 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel2.add(btn_cerrrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 230, -1));
+        jPanel2.add(btn_cerrrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 230, -1));
+
+        btn_perfil.setBackground(new java.awt.Color(70, 73, 75));
+        btn_perfil.setPreferredSize(new java.awt.Dimension(230, 80));
+        btn_perfil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_perfilMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn_perfilMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn_perfilMouseExited(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Perfil");
+        jLabel8.setAlignmentY(0.0F);
+
+        javax.swing.GroupLayout btn_perfilLayout = new javax.swing.GroupLayout(btn_perfil);
+        btn_perfil.setLayout(btn_perfilLayout);
+        btn_perfilLayout.setHorizontalGroup(
+            btn_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_perfilLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jLabel8)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+        btn_perfilLayout.setVerticalGroup(
+            btn_perfilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_perfilLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel8)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(btn_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 230, 80));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 800));
+
+        jPanel3.setBackground(new java.awt.Color(70, 73, 75));
+        jPanel3.setPreferredSize(new java.awt.Dimension(100, 80));
+
+        nombreAlumnoLabel.setBackground(new java.awt.Color(255, 255, 255));
+        nombreAlumnoLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        nombreAlumnoLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nombreAlumnoLabel.setText("nombreAlumno");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(nombreAlumnoLabel)
+                .addContainerGap(813, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(nombreAlumnoLabel)
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 970, -1));
+
+        contentPanel.setBackground(new java.awt.Color(51, 51, 51));
+
+        javax.swing.GroupLayout contentPanelLayout = new javax.swing.GroupLayout(contentPanel);
+        contentPanel.setLayout(contentPanelLayout);
+        contentPanelLayout.setHorizontalGroup(
+            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 970, Short.MAX_VALUE)
+        );
+        contentPanelLayout.setVerticalGroup(
+            contentPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 720, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(contentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 970, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,6 +490,44 @@ public class Dashboard extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_btn_cerrrarSesionMouseClicked
 
+    private void btn_perfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseClicked
+        // TODO add your handling code here:
+        
+        Connection conn = null;
+        Conexion con = new Conexion();
+        String codigos = nombreAlumnoLabel.getText();
+        String[] parts = codigos.split(" ");
+        try {
+            con.conexion(parts[0], this);
+            if (!con.isConnect(conn)) {
+                // Consulta sql con el codigo del alumno, para recuperar todos sus datos. Se realiza en el modulo del controlador
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_perfilMouseClicked
+
+    private void btn_perfilMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseEntered
+        // TODO add your handling code here:
+        btn_perfil.setBackground(new Color(51, 51, 51));
+    }//GEN-LAST:event_btn_perfilMouseEntered
+
+    private void btn_perfilMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseExited
+        // TODO add your handling code here:
+        btn_perfil.setBackground(new Color(70, 73, 75));
+    }//GEN-LAST:event_btn_perfilMouseExited
+
+    private void btn_alumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_alumnosMouseClicked
+        // TODO add your handling code here:
+        Alumnos alumno = new Alumnos();
+        alumno.setSize(970, 720);
+        alumno.setLocation(0, 0);
+        contentPanel.removeAll();
+        contentPanel.add(alumno, BorderLayout.CENTER);
+        contentPanel.revalidate();
+        contentPanel.repaint();
+    }//GEN-LAST:event_btn_alumnosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -439,6 +571,8 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel btn_escuelas;
     private javax.swing.JPanel btn_materias;
     private javax.swing.JPanel btn_nomina;
+    private javax.swing.JPanel btn_perfil;
+    public javax.swing.JPanel contentPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -446,7 +580,10 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    public javax.swing.JLabel nombreAlumnoLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -117,7 +117,9 @@ public class Conexion {
             try { // REVISAR FRAGMENTO DE CODIGO
                 Class.forName(driver);
                 conn =  DriverManager.getConnection(cadena, user, pass);
+                Object rol = perfilActualizar.rolTextField.getText();
                 Object nombre = perfilActualizar.nombrePerfilTextField.getText();
+                int codigo = Integer.parseInt(perfilActualizar.codigoPerfilTextField.getText());
                 Object nip = perfilActualizar.nipPerfilTextField.getText();
                 Object edad = perfilActualizar.edadPerfilTextField.getText();
                 Object genero = perfilActualizar.generoPerfilTextField.getText();
@@ -125,19 +127,20 @@ public class Conexion {
                 Object correo = perfilActualizar.correoPerfilTextField.getText();
                 Object centro = perfilActualizar.centroPerfilTextField.getText();
                 Object carrera = perfilActualizar.carreraPerfilTextField.getText();
-                String sql = "UPDATE estudiante SET nombre = ?, nip = ?, edad = ?, genero = ?, nacionalidad = ?, correo = ?, centro = ?, carrera = ? WHERE  codigo = ?";
+                String sql = "UPDATE estudiante SET rol = ?, nombre = ?, nip = ?, edad = ?, genero = ?, nacionalidad = ?, correo = ?, centro = ?, carrera = ? WHERE codigo = '"+codigo+"'";
                 try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                    statement.setString(1, rol.toString().trim());
+                    statement.setString(2, nombre.toString().trim());
+                    statement.setString(3, nip.toString().trim());
+                    statement.setString(4, edad.toString().trim());
+                    statement.setString(5, genero.toString().trim());
+                    statement.setString(6, nacionalidad.toString().trim());
+                    statement.setString(7, correo.toString().trim());
+                    statement.setString(8, centro.toString().trim());
+                    statement.setString(9, carrera.toString().trim());
                     
-                    statement.setString(2, nombre.toString());
-                    statement.setString(3, nip.toString());
-                    statement.setInt(4, Integer.parseInt((String) edad));
-                    statement.setString(5, genero.toString());
-                    statement.setString(6, nacionalidad.toString());
-                    statement.setString(7, correo.toString());
-                    statement.setString(8, centro.toString());
-                    statement.setString(9, carrera.toString());
-                    
-                    int result = statement.executeUpdate();
+                    int result = statement.executeUpdate(); 
+                    System.out.println(result);
                     if (result > 0) {
                         JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     }
@@ -148,13 +151,12 @@ public class Conexion {
                 d.contentPanel.add(perfilActualizar, BorderLayout.CENTER);
                 d.contentPanel.revalidate();
                 d.contentPanel.repaint();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Tu puta madre"+e.toString());
+            } catch (SQLException | NumberFormatException e) {
+                System.out.println("Message: " + e.getMessage());
             }
         }
-        
-        return conn;
-    }
+        return null;
+        }
     
     public boolean isConnect(Connection conn) throws SQLException {
         return this.conn.isClosed();

@@ -9,7 +9,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import vista.Dashboard;
 
 /**
  *
@@ -78,7 +77,6 @@ public class Perfil extends javax.swing.JPanel {
         editarPerfilBtn = new javax.swing.JButton();
         guardarPerfilBtn = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        centroPerfilTextField1 = new javax.swing.JTextField();
         rolTextField = new javax.swing.JTextField();
         rolComboBox = new javax.swing.JComboBox<>();
 
@@ -173,12 +171,12 @@ public class Perfil extends javax.swing.JPanel {
         correoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         correoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         correoPerfilTextField.setBorder(null);
-        add(correoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, -1));
+        add(correoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 500, -1));
 
         centroPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         centroPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         centroPerfilTextField.setBorder(null);
-        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 500, 20));
+        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, 20));
 
         carreraPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         carreraPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -251,16 +249,13 @@ public class Perfil extends javax.swing.JPanel {
         jLabel10.setText("Carrera");
         add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
 
-        centroPerfilTextField1.setBackground(new java.awt.Color(51, 51, 51));
-        centroPerfilTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        centroPerfilTextField1.setBorder(null);
-        add(centroPerfilTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 454, 500, -1));
-
         rolTextField.setBackground(new java.awt.Color(51, 51, 51));
         rolTextField.setForeground(new java.awt.Color(255, 255, 255));
+        rolTextField.setBorder(null);
         add(rolTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 490, -1));
 
         rolComboBox.setBackground(new java.awt.Color(51, 51, 51));
+        rolComboBox.setForeground(new java.awt.Color(255, 255, 255));
         rolComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor", "Administrador" }));
         add(rolComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 490, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -464,7 +459,7 @@ public class Perfil extends javax.swing.JPanel {
         centroComboBoxPerfil.setVisible(true);
         centroPerfilTextField.setVisible(false);
         centroPerfilTextField.setEditable(true);
-        centroComboBoxPerfil.setSelectedIndex(0);
+        centroComboBoxPerfil.setSelectedItem(centroPerfilTextField.getText());
         carreraComboBoxPerfil.setVisible(true);
         carreraPerfilTextField.setVisible(false);
         carreraPerfilTextField.setEditable(true);
@@ -484,6 +479,7 @@ public class Perfil extends javax.swing.JPanel {
         Conexion con = new Conexion();
         Dashboard d = new Dashboard();
         actualPerfil.nombrePerfilTextField.setText(nombrePerfilTextField.getText());
+        actualPerfil.codigoPerfilTextField.setText(codigoPerfilTextField.getText());
         actualPerfil.nipPerfilTextField.setText(nipPerfilTextField.getText());
         actualPerfil.edadPerfilTextField.setText((String) edadComboBoxPerfil.getSelectedItem());
         actualPerfil.generoPerfilTextField.setText((String) generoComboBoxPerfil.getSelectedItem());
@@ -494,15 +490,12 @@ public class Perfil extends javax.swing.JPanel {
         actualPerfil.rolTextField.setText((String) rolComboBox.getSelectedItem());
         
         try {
+            // Actualizacion realizada desde el controlador
             con.conexion(actualPerfil.codigoPerfilTextField.toString(), d, 1, actualPerfil);
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
-        d.contentPanel.removeAll();
-        d.contentPanel.add(actualPerfil, BorderLayout.CENTER);
-        d.contentPanel.revalidate();
-        d.contentPanel.repaint();
     }//GEN-LAST:event_guardarPerfilBtnActionPerformed
 
 
@@ -512,7 +505,6 @@ public class Perfil extends javax.swing.JPanel {
     public javax.swing.JTextField carreraPerfilTextField;
     private javax.swing.JComboBox<String> centroComboBoxPerfil;
     public javax.swing.JTextField centroPerfilTextField;
-    public javax.swing.JTextField centroPerfilTextField1;
     public javax.swing.JTextField codigoPerfilTextField;
     public javax.swing.JTextField correoPerfilTextField;
     public javax.swing.JComboBox<String> edadComboBoxPerfil;

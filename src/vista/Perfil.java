@@ -4,7 +4,12 @@
  */
 package vista;
 
+import controlador.Conexion;
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import vista.Dashboard;
 
 /**
  *
@@ -24,6 +29,17 @@ public class Perfil extends javax.swing.JPanel {
         carreraComboBoxPerfil.setVisible(false);
         guardarPerfilBtn.setVisible(false);
         cancelarPerfilBtn.setVisible(false);
+        nombrePerfilTextField.setEditable(false);
+        codigoPerfilTextField.setEditable(false);
+        nipPerfilTextField.setEditable(false);
+        edadPerfilTextField.setEditable(false);
+        generoPerfilTextField.setEditable(false);
+        nacionalidadPerfilTextField.setEditable(false);
+        correoPerfilTextField.setEditable(false);
+        centroPerfilTextField.setEditable(false);
+        carreraPerfilTextField.setEditable(false);
+        rolTextField.setEditable(false);
+        rolComboBox.setVisible(false);
     }
 
     /**
@@ -61,6 +77,10 @@ public class Perfil extends javax.swing.JPanel {
         carreraComboBoxPerfil = new javax.swing.JComboBox<>();
         editarPerfilBtn = new javax.swing.JButton();
         guardarPerfilBtn = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        centroPerfilTextField1 = new javax.swing.JTextField();
+        rolTextField = new javax.swing.JTextField();
+        rolComboBox = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,54 +95,54 @@ public class Perfil extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Código");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 97, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NIP");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 156, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
 
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Edad");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 215, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Género");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 274, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nacionalidad");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 333, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Correo");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 392, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Centro");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 451, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Carrera");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 510, -1, -1));
+        jLabel9.setText("Rol");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 550, -1, -1));
 
         codigoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         codigoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         codigoPerfilTextField.setBorder(null);
-        add(codigoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 100, 500, -1));
+        add(codigoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 500, -1));
 
         nombrePerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         nombrePerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,37 +153,37 @@ public class Perfil extends javax.swing.JPanel {
         edadPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         edadPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         edadPerfilTextField.setBorder(null);
-        add(edadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 218, -1, -1));
+        add(edadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
 
         nipPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         nipPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         nipPerfilTextField.setBorder(null);
-        add(nipPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 159, 500, -1));
+        add(nipPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 500, -1));
 
         generoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         generoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         generoPerfilTextField.setBorder(null);
-        add(generoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 277, 154, -1));
+        add(generoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 154, -1));
 
         nacionalidadPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         nacionalidadPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         nacionalidadPerfilTextField.setBorder(null);
-        add(nacionalidadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 336, 500, -1));
+        add(nacionalidadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 500, -1));
 
         correoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         correoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         correoPerfilTextField.setBorder(null);
-        add(correoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 395, 500, -1));
+        add(correoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, -1));
 
         centroPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         centroPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         centroPerfilTextField.setBorder(null);
-        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 454, 500, -1));
+        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 500, 20));
 
         carreraPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         carreraPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         carreraPerfilTextField.setBorder(null);
-        add(carreraPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 513, 500, -1));
+        add(carreraPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 500, -1));
 
         cancelarPerfilBtn.setBackground(new java.awt.Color(51, 51, 51));
         cancelarPerfilBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -178,17 +198,17 @@ public class Perfil extends javax.swing.JPanel {
         edadComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
         edadComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
         edadComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90" }));
-        add(edadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 50, 20));
+        add(edadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 50, 20));
 
         generoComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
         generoComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
         generoComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        add(generoComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 140, 20));
+        add(generoComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, 20));
 
         nacionalidadComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
         nacionalidadComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
         nacionalidadComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "España", "Guatemala", "Haití", "Honduras", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "República Dominicana", "Uruguay", "Venezuela" }));
-        add(nacionalidadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 330, 500, 20));
+        add(nacionalidadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 500, 20));
 
         centroComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
         centroComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
@@ -198,12 +218,12 @@ public class Perfil extends javax.swing.JPanel {
                 centroComboBoxPerfilActionPerformed(evt);
             }
         });
-        add(centroComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 452, 500, 20));
+        add(centroComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, 20));
 
         carreraComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
         carreraComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
         carreraComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(carreraComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 510, 500, -1));
+        add(carreraComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 500, -1));
 
         editarPerfilBtn.setBackground(new java.awt.Color(51, 51, 51));
         editarPerfilBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -224,6 +244,25 @@ public class Perfil extends javax.swing.JPanel {
             }
         });
         add(guardarPerfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 38, -1, -1));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Carrera");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
+
+        centroPerfilTextField1.setBackground(new java.awt.Color(51, 51, 51));
+        centroPerfilTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        centroPerfilTextField1.setBorder(null);
+        add(centroPerfilTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 454, 500, -1));
+
+        rolTextField.setBackground(new java.awt.Color(51, 51, 51));
+        rolTextField.setForeground(new java.awt.Color(255, 255, 255));
+        add(rolTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 490, -1));
+
+        rolComboBox.setBackground(new java.awt.Color(51, 51, 51));
+        rolComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor", "Administrador" }));
+        add(rolComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 490, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPerfilBtnActionPerformed
@@ -249,6 +288,8 @@ public class Perfil extends javax.swing.JPanel {
         centroPerfilTextField.setVisible(true);
         carreraComboBoxPerfil.setVisible(false);
         carreraPerfilTextField.setVisible(true);
+        rolComboBox.setVisible(false);
+        rolTextField.setVisible(true);
     }//GEN-LAST:event_cancelarPerfilBtnActionPerformed
 
     private void centroComboBoxPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_centroComboBoxPerfilActionPerformed
@@ -401,34 +442,67 @@ public class Perfil extends javax.swing.JPanel {
         // TODO add your handling code here:
         nombrePerfilTextField.setFocusable(true);
         nombrePerfilTextField.setForeground(new Color(0, 204, 0));
-        codigoPerfilTextField.setFocusable(true);
-        codigoPerfilTextField.setForeground(new Color(0, 204, 0));
+        nombrePerfilTextField.setEditable(true);
         nipPerfilTextField.setFocusable(true);
         nipPerfilTextField.setForeground(new Color(0, 204, 0));
+        nipPerfilTextField.setEditable(true);
+        edadPerfilTextField.setEditable(true);
         edadComboBoxPerfil.setSelectedItem(edadPerfilTextField.getText());
         edadComboBoxPerfil.setVisible(true);
         edadPerfilTextField.setVisible(false);
         generoComboBoxPerfil.setVisible(true);
         generoPerfilTextField.setVisible(false);
+        generoPerfilTextField.setEditable(true);
         generoComboBoxPerfil.setSelectedItem(generoPerfilTextField.getText());
         nacionalidadComboBoxPerfil.setVisible(true);
         nacionalidadPerfilTextField.setVisible(false);
+        nacionalidadPerfilTextField.setEditable(true);
         nacionalidadComboBoxPerfil.setSelectedItem(nacionalidadPerfilTextField.getText());
         correoPerfilTextField.setFocusable(true);
         correoPerfilTextField.setForeground(new Color(0, 204, 0));
+        correoPerfilTextField.setEditable(true);
         centroComboBoxPerfil.setVisible(true);
         centroPerfilTextField.setVisible(false);
+        centroPerfilTextField.setEditable(true);
         centroComboBoxPerfil.setSelectedIndex(0);
         carreraComboBoxPerfil.setVisible(true);
         carreraPerfilTextField.setVisible(false);
+        carreraPerfilTextField.setEditable(true);
         carreraComboBoxPerfil.setSelectedItem(carreraPerfilTextField.getText());
         editarPerfilBtn.setVisible(false);
         cancelarPerfilBtn.setVisible(true);
         guardarPerfilBtn.setVisible(true);
+        rolComboBox.setVisible(true);
+        rolTextField.setVisible(false);
+        rolTextField.setEditable(true);
+        rolComboBox.setSelectedItem(rolTextField.getText());
     }//GEN-LAST:event_editarPerfilBtnActionPerformed
 
     private void guardarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPerfilBtnActionPerformed
         // TODO add your handling code here:
+        Perfil actualPerfil = new Perfil();
+        Conexion con = new Conexion();
+        Dashboard d = new Dashboard();
+        actualPerfil.nombrePerfilTextField.setText(nombrePerfilTextField.getText());
+        actualPerfil.nipPerfilTextField.setText(nipPerfilTextField.getText());
+        actualPerfil.edadPerfilTextField.setText((String) edadComboBoxPerfil.getSelectedItem());
+        actualPerfil.generoPerfilTextField.setText((String) generoComboBoxPerfil.getSelectedItem());
+        actualPerfil.nacionalidadPerfilTextField.setText((String) nacionalidadComboBoxPerfil.getSelectedItem());
+        actualPerfil.correoPerfilTextField.setText(correoPerfilTextField.getText());
+        actualPerfil.centroPerfilTextField.setText((String) centroComboBoxPerfil.getSelectedItem());
+        actualPerfil.carreraPerfilTextField.setText((String) carreraComboBoxPerfil.getSelectedItem());
+        actualPerfil.rolTextField.setText((String) rolComboBox.getSelectedItem());
+        
+        try {
+            con.conexion(actualPerfil.codigoPerfilTextField.toString(), d, 1, actualPerfil);
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        d.contentPanel.removeAll();
+        d.contentPanel.add(actualPerfil, BorderLayout.CENTER);
+        d.contentPanel.revalidate();
+        d.contentPanel.repaint();
     }//GEN-LAST:event_guardarPerfilBtnActionPerformed
 
 
@@ -438,6 +512,7 @@ public class Perfil extends javax.swing.JPanel {
     public javax.swing.JTextField carreraPerfilTextField;
     private javax.swing.JComboBox<String> centroComboBoxPerfil;
     public javax.swing.JTextField centroPerfilTextField;
+    public javax.swing.JTextField centroPerfilTextField1;
     public javax.swing.JTextField codigoPerfilTextField;
     public javax.swing.JTextField correoPerfilTextField;
     public javax.swing.JComboBox<String> edadComboBoxPerfil;
@@ -447,6 +522,7 @@ public class Perfil extends javax.swing.JPanel {
     public javax.swing.JTextField generoPerfilTextField;
     public javax.swing.JButton guardarPerfilBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -459,5 +535,7 @@ public class Perfil extends javax.swing.JPanel {
     public javax.swing.JTextField nacionalidadPerfilTextField;
     public javax.swing.JTextField nipPerfilTextField;
     public javax.swing.JTextField nombrePerfilTextField;
+    private javax.swing.JComboBox<String> rolComboBox;
+    public javax.swing.JTextField rolTextField;
     // End of variables declaration//GEN-END:variables
 }

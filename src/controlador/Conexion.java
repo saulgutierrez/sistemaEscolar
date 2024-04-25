@@ -56,54 +56,103 @@ public class Conexion {
  }
     
     // Para hacer consulta de informacion
-    public Connection conexion(String codigoAlumno, Dashboard d) throws ClassNotFoundException {
-        try {
-            Class.forName(driver);
-            conn =  DriverManager.getConnection(cadena, user, pass);
-            ps = conn.prepareStatement("SELECT * FROM estudiante WHERE codigo = '"+codigoAlumno+"'");
-            ResultSet result = ps.executeQuery();
-            Object nombre;
-            Object codigo;
-            Object nip;
-            Object edad;
-            Object genero;
-            Object nacionalidad;
-            Object correo;
-            Object centro;
-            Object carrera;
-            Perfil perfil = new Perfil();
-            perfil.setSize(970, 720);
-            perfil.setLocation(0, 0);
-            
-            int i = 2;
-            while (result.next()) {
-                nombre = result.getObject(i);
-                codigo = result.getObject(i+1);
-                nip = result.getObject(i+2);
-                edad = result.getObject(i+3);
-                genero = result.getObject(i+4);
-                nacionalidad = result.getObject(i+5);
-                correo = result.getObject(i+6);
-                centro = result.getObject(i+7);
-                carrera = result.getObject(i+8);
-                perfil.nombrePerfilTextField.setText(nombre.toString());
-                perfil.codigoPerfilTextField.setText(codigo.toString());
-                perfil.nipPerfilTextField.setText(nip.toString());
-                perfil.edadPerfilTextField.setText(edad.toString());
-                perfil.generoPerfilTextField.setText(genero.toString());
-                perfil.nacionalidadPerfilTextField.setText(nacionalidad.toString());
-                perfil.correoPerfilTextField.setText(correo.toString());
-                perfil.centroPerfilTextField.setText(centro.toString());
-                perfil.carreraPerfilTextField.setText(carrera.toString());
+    // Tambien puede servir para actualizar informacion si se envia un tercer
+    // parametro de forma numerica en este constructor conexion
+    // Si numero = 0, entonces mostramos informacion
+    // Si numero = 1, entonces actualizamos los datos
+    public Connection conexion(String codigoAlumno, Dashboard d, int action, Perfil perfilActualizar) throws ClassNotFoundException {
+        // Mostrar informacion
+        if (action == 0) {
+            try {
+                Class.forName(driver);
+                conn =  DriverManager.getConnection(cadena, user, pass);
+                ps = conn.prepareStatement("SELECT * FROM estudiante WHERE codigo = '"+codigoAlumno+"'");
+                ResultSet result = ps.executeQuery();
+                Object nombre;
+                Object codigo;
+                Object nip;
+                Object edad;
+                Object genero;
+                Object nacionalidad;
+                Object correo;
+                Object centro;
+                Object carrera;
+                Object rol;
+                Perfil perfil = new Perfil();
+                perfil.setSize(970, 720);
+                perfil.setLocation(0, 0);
+
+                int i = 1;
+                while (result.next()) {
+                    rol = result.getObject(i);
+                    nombre = result.getObject(i+1);
+                    codigo = result.getObject(i+2);
+                    nip = result.getObject(i+3);
+                    edad = result.getObject(i+4);
+                    genero = result.getObject(i+5);
+                    nacionalidad = result.getObject(i+6);
+                    correo = result.getObject(i+7);
+                    centro = result.getObject(i+8);
+                    carrera = result.getObject(i+9);
+                    perfil.nombrePerfilTextField.setText(nombre.toString());
+                    perfil.codigoPerfilTextField.setText(codigo.toString());
+                    perfil.nipPerfilTextField.setText(nip.toString());
+                    perfil.edadPerfilTextField.setText(edad.toString());
+                    perfil.generoPerfilTextField.setText(genero.toString());
+                    perfil.nacionalidadPerfilTextField.setText(nacionalidad.toString());
+                    perfil.correoPerfilTextField.setText(correo.toString());
+                    perfil.centroPerfilTextField.setText(centro.toString());
+                    perfil.carreraPerfilTextField.setText(carrera.toString());
+                    perfil.rolTextField.setText(rol.toString());
+                    d.contentPanel.removeAll();
+                    d.contentPanel.add(perfil, BorderLayout.CENTER);
+                    d.contentPanel.revalidate();
+                    d.contentPanel.repaint();
+                    i++;
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error de conexion con el servidor"+e.toString());
+            }
+        } else { // Actualizar informacion
+            try { // REVISAR FRAGMENTO DE CODIGO
+                Class.forName(driver);
+                conn =  DriverManager.getConnection(cadena, user, pass);
+                Object nombre = perfilActualizar.nombrePerfilTextField.getText();
+                Object nip = perfilActualizar.nipPerfilTextField.getText();
+                Object edad = perfilActualizar.edadPerfilTextField.getText();
+                Object genero = perfilActualizar.generoPerfilTextField.getText();
+                Object nacionalidad = perfilActualizar.nacionalidadPerfilTextField.getText();
+                Object correo = perfilActualizar.correoPerfilTextField.getText();
+                Object centro = perfilActualizar.centroPerfilTextField.getText();
+                Object carrera = perfilActualizar.carreraPerfilTextField.getText();
+                String sql = "UPDATE estudiante SET nombre = ?, nip = ?, edad = ?, genero = ?, nacionalidad = ?, correo = ?, centro = ?, carrera = ? WHERE  codigo = ?";
+                try (PreparedStatement statement = conn.prepareStatement(sql)) {
+                    
+                    statement.setString(2, nombre.toString());
+                    statement.setString(3, nip.toString());
+                    statement.setInt(4, Integer.parseInt((String) edad));
+                    statement.setString(5, genero.toString());
+                    statement.setString(6, nacionalidad.toString());
+                    statement.setString(7, correo.toString());
+                    statement.setString(8, centro.toString());
+                    statement.setString(9, carrera.toString());
+                    
+                    int result = statement.executeUpdate();
+                    if (result > 0) {
+                        JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
+                    }
+                }
+                perfilActualizar.setSize(970, 720);
+                perfilActualizar.setLocation(0, 0);
                 d.contentPanel.removeAll();
-                d.contentPanel.add(perfil, BorderLayout.CENTER);
+                d.contentPanel.add(perfilActualizar, BorderLayout.CENTER);
                 d.contentPanel.revalidate();
                 d.contentPanel.repaint();
-                i++;
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Tu puta madre"+e.toString());
             }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error de conexion con el servidor"+e.toString());
         }
+        
         return conn;
     }
     

@@ -545,6 +545,7 @@ public class Registro extends javax.swing.JFrame {
                 correoTextField.setText("");
                 centroComboBox.setSelectedIndex(0);
                 carreraComboBox.setSelectedIndex(0);
+                rolComboBox.setSelectedIndex(0);
                 
             } else {
                 JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");

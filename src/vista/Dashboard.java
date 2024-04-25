@@ -492,13 +492,12 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void btn_perfilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_perfilMouseClicked
         // TODO add your handling code here:
-        
         Connection conn = null;
         Conexion con = new Conexion();
         String codigos = nombreAlumnoLabel.getText();
         String[] parts = codigos.split(" ");
         try {
-            con.conexion(parts[0], this);
+            con.conexion(parts[0], this, 0, null);
             if (!con.isConnect(conn)) {
                 // Consulta sql con el codigo del alumno, para recuperar todos sus datos. Se realiza en el modulo del controlador
             }

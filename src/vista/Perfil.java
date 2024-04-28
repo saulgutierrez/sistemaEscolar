@@ -5,7 +5,6 @@
 package vista;
 
 import controlador.Conexion;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -176,7 +175,7 @@ public class Perfil extends javax.swing.JPanel {
         centroPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         centroPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         centroPerfilTextField.setBorder(null);
-        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, 20));
+        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 500, 20));
 
         carreraPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         carreraPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
@@ -285,6 +284,16 @@ public class Perfil extends javax.swing.JPanel {
         carreraPerfilTextField.setVisible(true);
         rolComboBox.setVisible(false);
         rolTextField.setVisible(true);
+        nombrePerfilTextField.setEditable(false);
+        codigoPerfilTextField.setEditable(false);
+        nipPerfilTextField.setEditable(false);
+        edadPerfilTextField.setEditable(false);
+        generoPerfilTextField.setEditable(false);
+        nacionalidadPerfilTextField.setEditable(false);
+        correoPerfilTextField.setEditable(false);
+        centroPerfilTextField.setEditable(false);
+        carreraPerfilTextField.setEditable(false);
+        rolTextField.setEditable(false);
     }//GEN-LAST:event_cancelarPerfilBtnActionPerformed
 
     private void centroComboBoxPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_centroComboBoxPerfilActionPerformed
@@ -492,7 +501,37 @@ public class Perfil extends javax.swing.JPanel {
         try {
             // Actualizacion realizada desde el controlador
             con.conexion(actualPerfil.codigoPerfilTextField.toString(), d, 1, actualPerfil);
-            
+            // Una vez que realizamos la actualizacion, regresamos los campos a solo lectura
+            this.nombrePerfilTextField.setFocusable(false);
+            this.nombrePerfilTextField.setForeground(new Color(255, 255, 255));       
+            this.nipPerfilTextField.setFocusable(false);
+            this.nipPerfilTextField.setForeground(new Color(255, 255, 255));
+            this.edadComboBoxPerfil.setVisible(false);
+            this.edadPerfilTextField.setText((String) this.edadComboBoxPerfil.getSelectedItem());
+            this.edadPerfilTextField.setVisible(true);
+            this.edadPerfilTextField.setEditable(false);
+            this.generoComboBoxPerfil.setVisible(false);
+            this.generoPerfilTextField.setText((String) this.generoComboBoxPerfil.getSelectedItem());
+            this.generoPerfilTextField.setVisible(true);
+            this.generoPerfilTextField.setEditable(false);
+            this.nacionalidadComboBoxPerfil.setVisible(false);
+            this.nacionalidadPerfilTextField.setText((String) this.nacionalidadComboBoxPerfil.getSelectedItem());
+            this.nacionalidadPerfilTextField.setVisible(true);
+            this.nacionalidadPerfilTextField.setEditable(false);
+            this.correoPerfilTextField.setFocusable(false);
+            this.correoPerfilTextField.setForeground(new Color(255, 255, 255));
+            this.centroComboBoxPerfil.setVisible(false);
+            this.centroPerfilTextField.setText((String) this.centroComboBoxPerfil.getSelectedItem());
+            this.centroPerfilTextField.setVisible(true);
+            this.centroPerfilTextField.setEditable(false);
+            this.carreraComboBoxPerfil.setVisible(false);
+            this.carreraPerfilTextField.setText((String) this.carreraComboBoxPerfil.getSelectedItem());
+            this.carreraPerfilTextField.setVisible(true);
+            this.carreraPerfilTextField.setEditable(false);
+            this.rolComboBox.setVisible(false);
+            this.rolTextField.setText((String) this.rolComboBox.getSelectedItem());
+            this.rolTextField.setVisible(true);
+            this.rolTextField.setEditable(false);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -501,16 +540,16 @@ public class Perfil extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton cancelarPerfilBtn;
-    private javax.swing.JComboBox<String> carreraComboBoxPerfil;
+    public javax.swing.JComboBox<String> carreraComboBoxPerfil;
     public javax.swing.JTextField carreraPerfilTextField;
-    private javax.swing.JComboBox<String> centroComboBoxPerfil;
+    public javax.swing.JComboBox<String> centroComboBoxPerfil;
     public javax.swing.JTextField centroPerfilTextField;
     public javax.swing.JTextField codigoPerfilTextField;
     public javax.swing.JTextField correoPerfilTextField;
     public javax.swing.JComboBox<String> edadComboBoxPerfil;
     public javax.swing.JTextField edadPerfilTextField;
     public javax.swing.JButton editarPerfilBtn;
-    private javax.swing.JComboBox<String> generoComboBoxPerfil;
+    public javax.swing.JComboBox<String> generoComboBoxPerfil;
     public javax.swing.JTextField generoPerfilTextField;
     public javax.swing.JButton guardarPerfilBtn;
     private javax.swing.JLabel jLabel1;
@@ -523,11 +562,11 @@ public class Perfil extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JComboBox<String> nacionalidadComboBoxPerfil;
+    public javax.swing.JComboBox<String> nacionalidadComboBoxPerfil;
     public javax.swing.JTextField nacionalidadPerfilTextField;
     public javax.swing.JTextField nipPerfilTextField;
     public javax.swing.JTextField nombrePerfilTextField;
-    private javax.swing.JComboBox<String> rolComboBox;
+    public javax.swing.JComboBox<String> rolComboBox;
     public javax.swing.JTextField rolTextField;
     // End of variables declaration//GEN-END:variables
 }

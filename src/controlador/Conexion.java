@@ -113,8 +113,8 @@ public class Conexion {
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, "Error de conexion con el servidor"+e.toString());
             }
-        } else { // Actualizar informacion
-            try { // REVISAR FRAGMENTO DE CODIGO
+        } else { // Actualizar infromacion
+            try {
                 Class.forName(driver);
                 conn =  DriverManager.getConnection(cadena, user, pass);
                 Object rol = perfilActualizar.rolTextField.getText();
@@ -140,7 +140,6 @@ public class Conexion {
                     statement.setString(9, carrera.toString().trim());
                     
                     int result = statement.executeUpdate(); 
-                    System.out.println(result);
                     if (result > 0) {
                         JOptionPane.showMessageDialog(null, "Datos actualizados exitosamente");
                     }

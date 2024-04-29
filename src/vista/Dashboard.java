@@ -46,7 +46,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btn_calificaciones = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        btn_cambioNip = new javax.swing.JPanel();
+        btn_Horario = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         btn_cerrrarSesion = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -241,40 +241,43 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel2.add(btn_calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 230, -1));
 
-        btn_cambioNip.setBackground(new java.awt.Color(70, 73, 75));
-        btn_cambioNip.setPreferredSize(new java.awt.Dimension(230, 80));
-        btn_cambioNip.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_Horario.setBackground(new java.awt.Color(70, 73, 75));
+        btn_Horario.setPreferredSize(new java.awt.Dimension(230, 80));
+        btn_Horario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_HorarioMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_cambioNipMouseEntered(evt);
+                btn_HorarioMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_cambioNipMouseExited(evt);
+                btn_HorarioMouseExited(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Cambio de NIP");
+        jLabel6.setText("Horario");
         jLabel6.setAlignmentY(0.0F);
 
-        javax.swing.GroupLayout btn_cambioNipLayout = new javax.swing.GroupLayout(btn_cambioNip);
-        btn_cambioNip.setLayout(btn_cambioNipLayout);
-        btn_cambioNipLayout.setHorizontalGroup(
-            btn_cambioNipLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_cambioNipLayout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+        javax.swing.GroupLayout btn_HorarioLayout = new javax.swing.GroupLayout(btn_Horario);
+        btn_Horario.setLayout(btn_HorarioLayout);
+        btn_HorarioLayout.setHorizontalGroup(
+            btn_HorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btn_HorarioLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
                 .addComponent(jLabel6)
-                .addGap(53, 53, 53))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
-        btn_cambioNipLayout.setVerticalGroup(
-            btn_cambioNipLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_cambioNipLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+        btn_HorarioLayout.setVerticalGroup(
+            btn_HorarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_HorarioLayout.createSequentialGroup()
+                .addContainerGap(31, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(33, 33, 33))
+                .addGap(29, 29, 29))
         );
 
-        jPanel2.add(btn_cambioNip, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 230, -1));
+        jPanel2.add(btn_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 230, -1));
 
         btn_cerrrarSesion.setBackground(new java.awt.Color(70, 73, 75));
         btn_cerrrarSesion.setPreferredSize(new java.awt.Dimension(230, 80));
@@ -460,15 +463,15 @@ public class Dashboard extends javax.swing.JFrame {
         btn_calificaciones.setBackground(new Color(70, 73, 75));
     }//GEN-LAST:event_btn_calificacionesMouseExited
 
-    private void btn_cambioNipMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cambioNipMouseEntered
+    private void btn_HorarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HorarioMouseEntered
         // TODO add your handling code here:
-        btn_cambioNip.setBackground(new Color(51, 51, 51));
-    }//GEN-LAST:event_btn_cambioNipMouseEntered
+        btn_Horario.setBackground(new Color(51, 51, 51));
+    }//GEN-LAST:event_btn_HorarioMouseEntered
 
-    private void btn_cambioNipMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cambioNipMouseExited
+    private void btn_HorarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HorarioMouseExited
         // TODO add your handling code here:
-        btn_cambioNip.setBackground(new Color(70, 73, 75));
-    }//GEN-LAST:event_btn_cambioNipMouseExited
+        btn_Horario.setBackground(new Color(70, 73, 75));
+    }//GEN-LAST:event_btn_HorarioMouseExited
 
     private void btn_cerrrarSesionMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_cerrrarSesionMouseEntered
         // TODO add your handling code here:
@@ -527,6 +530,17 @@ public class Dashboard extends javax.swing.JFrame {
         contentPanel.repaint();
     }//GEN-LAST:event_btn_alumnosMouseClicked
 
+    private void btn_HorarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HorarioMouseClicked
+        // TODO add your handling code here:
+        Horario horario = new Horario();
+        horario.setSize(970, 720);
+        horario.setLocation(0, 0);
+        contentPanel.removeAll();
+        contentPanel.add(horario, BorderLayout.CENTER);
+        contentPanel.revalidate();
+        contentPanel.repaint();
+    }//GEN-LAST:event_btn_HorarioMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -563,9 +577,9 @@ public class Dashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel btn_Horario;
     private javax.swing.JPanel btn_alumnos;
     private javax.swing.JPanel btn_calificaciones;
-    private javax.swing.JPanel btn_cambioNip;
     private javax.swing.JPanel btn_cerrrarSesion;
     private javax.swing.JPanel btn_escuelas;
     private javax.swing.JPanel btn_materias;

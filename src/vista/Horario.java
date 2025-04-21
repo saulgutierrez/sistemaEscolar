@@ -26,13 +26,42 @@ public class Horario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        editarMateriaBtn = new javax.swing.JButton();
+        agregarMateriaBtn = new javax.swing.JButton();
+        eliminarMateriaBtn = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(51, 51, 51));
+        setForeground(new java.awt.Color(51, 51, 51));
         setPreferredSize(new java.awt.Dimension(970, 720));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        editarMateriaBtn.setBackground(new java.awt.Color(51, 51, 51));
+        editarMateriaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        editarMateriaBtn.setText("Editar materia");
+        add(editarMateriaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, -1, -1));
+
+        agregarMateriaBtn.setBackground(new java.awt.Color(51, 51, 51));
+        agregarMateriaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        agregarMateriaBtn.setText("Agregar materia");
+        agregarMateriaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarMateriaBtnMouseClicked(evt);
+            }
+        });
+        add(agregarMateriaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
+
+        eliminarMateriaBtn.setBackground(new java.awt.Color(51, 51, 51));
+        eliminarMateriaBtn.setForeground(new java.awt.Color(255, 255, 255));
+        eliminarMateriaBtn.setText("Eliminar materia");
+        eliminarMateriaBtn.setActionCommand("Quitar materia");
+        add(eliminarMateriaBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 500, -1, -1));
+
+        jScrollPane1.setBackground(new java.awt.Color(51, 51, 51));
+        jScrollPane1.setForeground(new java.awt.Color(51, 51, 51));
+
+        jTable1.setForeground(new java.awt.Color(70, 73, 75));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -44,13 +73,29 @@ public class Horario extends javax.swing.JPanel {
                 "Materia", "Horario", "Dias", "Profesor", "Creditos"
             }
         ));
+        jTable1.setGridColor(new java.awt.Color(70, 73, 75));
+        jTable1.setSelectionForeground(new java.awt.Color(70, 73, 75));
+        jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
+        jTable1.getAccessibleContext().setAccessibleName("");
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 720));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void agregarMateriaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMateriaBtnMouseClicked
+        // TODO add your handling code here:
+        ConsultaMaterias consulta = new ConsultaMaterias();
+        consulta.setSize(500, 700);
+        consulta.setResizable(false);
+        consulta.setLocationRelativeTo(null);
+        consulta.setVisible(true);
+    }//GEN-LAST:event_agregarMateriaBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarMateriaBtn;
+    private javax.swing.JButton editarMateriaBtn;
+    private javax.swing.JButton eliminarMateriaBtn;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

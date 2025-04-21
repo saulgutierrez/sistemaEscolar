@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import modelo.Estudiante;
+import modelo.Profesor;
 
 public class Registro extends javax.swing.JFrame {
 
@@ -470,83 +471,143 @@ public class Registro extends javax.swing.JFrame {
         Connection conn = null;
         Conexion con = new Conexion();
         
-        if(nombreTextField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
+        if (rolComboBox.getSelectedIndex() == 0) {
+            if (nombreTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
         
-        if(codigoTextField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
+            if (codigoTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if (nipTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if (generoComboBox.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if(nacionalidadComboBox.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if (correoTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if (centroComboBox.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+            
+        } else {
+            if (nombreTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
         
-        if(nipTextField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
+            if (codigoTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+
+            if (nipTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+                return;
+            }
+            
+            if (carreraComboBox.getSelectedIndex()  == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            }
+            
+            if (departamentoTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            }
+            
+            if (correoTextField.getText().length() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            }
+            
+            if (centroComboBox.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
+            }
         }
-        
-        if(generoComboBox.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
-        
-        if(nacionalidadComboBox.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
-        
-        if(correoTextField.getText().length() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
-        
-        if(centroComboBox.getSelectedIndex() == 0) {
-            JOptionPane.showMessageDialog(null, "Faltan campos por llenar");
-            return;
-        }
-        
+                
         try {
             conn = (Connection) con.conexionSinLogin();
             if (!con.isConnect(conn)) {
-                Estudiante estudiante = new Estudiante();
-                estudiante.setRol(rolComboBox.getSelectedItem().toString());
-                estudiante.setNombre(nombreTextField.getText());
-                estudiante.setCodigo(Integer.parseInt(codigoTextField.getText()));
-                estudiante.setNip(nipTextField.getText());
-                estudiante.setEdad(Integer.parseInt(edadComboBox.getSelectedItem().toString()));
-                estudiante.setGenero(generoComboBox.getSelectedItem().toString());
-                estudiante.setNacionalidad(nacionalidadComboBox.getSelectedItem().toString());
-                estudiante.setCorreo(correoTextField.getText());
-                estudiante.setCentroUniversitario(centroComboBox.getSelectedItem().toString());
-                estudiante.setCarrera(carreraComboBox.getSelectedItem().toString());
-                
-                PreparedStatement statement = (PreparedStatement) conn.prepareStatement("INSERT INTO estudiante VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
-                statement.setString(1, estudiante.getRol());
-                statement.setString(2, estudiante.getNombre());
-                statement.setInt(3, estudiante.getCodigo());
-                statement.setString(4, estudiante.getNip());
-                statement.setInt(5, estudiante.getEdad());
-                statement.setString(6, estudiante.getGenero());
-                statement.setString(7, estudiante.getNacionalidad());
-                statement.setString(8, estudiante.getCorreo());
-                statement.setString(9, estudiante.getCentroUniversitario());
-                statement.setString(10, estudiante.getCarrera());
-                
-                statement.executeUpdate();
-                
-                JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
-                
-                nombreTextField.setText("");
-                codigoTextField.setText("");
-                nipTextField.setText("");
-                edadComboBox.setSelectedIndex(0);
-                generoComboBox.setSelectedIndex(0);
-                nacionalidadComboBox.setSelectedIndex(0);
-                correoTextField.setText("");
-                centroComboBox.setSelectedIndex(0);
-                carreraComboBox.setSelectedIndex(0);
-                rolComboBox.setSelectedIndex(0);
-                
+                if (rolComboBox.getSelectedIndex() == 0) {
+                    Estudiante estudiante = new Estudiante();
+                    estudiante.setRol(rolComboBox.getSelectedItem().toString());
+                    estudiante.setNombre(nombreTextField.getText());
+                    estudiante.setCodigo(Integer.parseInt(codigoTextField.getText()));
+                    estudiante.setNip(nipTextField.getText());
+                    estudiante.setEdad(Integer.parseInt(edadComboBox.getSelectedItem().toString()));
+                    estudiante.setGenero(generoComboBox.getSelectedItem().toString());
+                    estudiante.setNacionalidad(nacionalidadComboBox.getSelectedItem().toString());
+                    estudiante.setCorreo(correoTextField.getText());
+                    estudiante.setCentroUniversitario(centroComboBox.getSelectedItem().toString());
+                    estudiante.setCarrera(carreraComboBox.getSelectedItem().toString());
+
+                    PreparedStatement statement = (PreparedStatement) conn.prepareStatement("INSERT INTO estudiante VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+                    statement.setString(1, estudiante.getRol());
+                    statement.setString(2, estudiante.getNombre());
+                    statement.setInt(3, estudiante.getCodigo());
+                    statement.setString(4, estudiante.getNip());
+                    statement.setInt(5, estudiante.getEdad());
+                    statement.setString(6, estudiante.getGenero());
+                    statement.setString(7, estudiante.getNacionalidad());
+                    statement.setString(8, estudiante.getCorreo());
+                    statement.setString(9, estudiante.getCentroUniversitario());
+                    statement.setString(10, estudiante.getCarrera());
+
+                    statement.executeUpdate();
+
+                    JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
+
+                    nombreTextField.setText("");
+                    codigoTextField.setText("");
+                    nipTextField.setText("");
+                    edadComboBox.setSelectedIndex(0);
+                    generoComboBox.setSelectedIndex(0);
+                    nacionalidadComboBox.setSelectedIndex(0);
+                    correoTextField.setText("");
+                    centroComboBox.setSelectedIndex(0);
+                    carreraComboBox.setSelectedIndex(0);
+                    rolComboBox.setSelectedIndex(0);
+                } else if (rolComboBox.getSelectedIndex() == 1) {
+                    Profesor profesor = new Profesor();
+                    profesor.setRol(rolComboBox.getSelectedItem().toString());
+                    profesor.setNombre(nombreTextField.getText());
+                    profesor.setCodigo(Integer.parseInt(codigoTextField.getText()));
+                    profesor.setNip(nipTextField.getText());
+                    profesor.setTitulo(carreraComboBox.getSelectedItem().toString());
+                    profesor.setDepartamento(departamentoTextField.getText());
+                    profesor.setCorreo(correoTextField.getText());
+                    profesor.setCentroUniversitario(centroComboBox.getSelectedItem().toString());
+                    
+                    PreparedStatement statement2 = (PreparedStatement) conn.prepareStatement("INSERT INTO profesor VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) ");
+                    statement2.setString(1, profesor.getRol());
+                    statement2.setString(2, profesor.getNombre());
+                    statement2.setInt(3, profesor.getCodigo());
+                    statement2.setString(4, profesor.getNip());
+                    statement2.setString(5, profesor.getTitulo());
+                    statement2.setString(6, profesor.getDepartamento());
+                    statement2.setString(7, profesor.getCorreo());
+                    statement2.setString(8, profesor.getCentroUniversitario());
+                    statement2.setString(9, "");
+                    
+                    statement2.executeUpdate();
+                    
+                    JOptionPane.showMessageDialog(null, "Usuario registrado correctamente");
+                }   
             } else {
                 JOptionPane.showMessageDialog(null, "Error al conectar con el servidor");
             }

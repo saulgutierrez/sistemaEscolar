@@ -1,9 +1,10 @@
 package modelo;
 
 public class Profesor {
+    private String rol;
     private String nombre;
     private int codigo;
-    private int nip;
+    private String nip;
     private String titulo;
     private String departamento;
     private String correo;
@@ -42,11 +43,11 @@ public class Profesor {
         this.codigo = codigo;
     }
 
-    public int getNip() {
+    public String getNip() {
         return nip;
     }
 
-    public void setNip(int nip) {
+    public void setNip(String nip) {
         this.nip = nip;
     }
 
@@ -72,5 +73,13 @@ public class Profesor {
 
     public void setCentroUniversitario(String centroUniversitario) {
         this.centroUniversitario = centroUniversitario;
+    }
+    
+    public String getRol() {
+        return rol;
+    }
+    
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

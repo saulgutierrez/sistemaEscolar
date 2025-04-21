@@ -13,12 +13,12 @@ import java.util.logging.Logger;
  *
  * @author USER
  */
-public class Perfil extends javax.swing.JPanel {
+public class PerfilEstudiante extends javax.swing.JPanel {
 
     /**
      * Creates new form Perfil
      */
-    public Perfil() {
+    public PerfilEstudiante() {
         initComponents();
         edadComboBoxPerfil.setVisible(false);
         generoComboBoxPerfil.setVisible(false);
@@ -484,9 +484,9 @@ public class Perfil extends javax.swing.JPanel {
 
     private void guardarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPerfilBtnActionPerformed
         // TODO add your handling code here:
-        Perfil actualPerfil = new Perfil();
+        PerfilEstudiante actualPerfil = new PerfilEstudiante();
         Conexion con = new Conexion();
-        Dashboard d = new Dashboard();
+        PanelEstudiante d = new PanelEstudiante();
         actualPerfil.nombrePerfilTextField.setText(nombrePerfilTextField.getText());
         actualPerfil.codigoPerfilTextField.setText(codigoPerfilTextField.getText());
         actualPerfil.nipPerfilTextField.setText(nipPerfilTextField.getText());
@@ -533,7 +533,7 @@ public class Perfil extends javax.swing.JPanel {
             this.rolTextField.setVisible(true);
             this.rolTextField.setEditable(false);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Perfil.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(PerfilEstudiante.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_guardarPerfilBtnActionPerformed
 

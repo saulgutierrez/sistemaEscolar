@@ -16,12 +16,12 @@ import java.util.logging.Logger;
  *
  * @author USER
  */
-public class Dashboard extends javax.swing.JFrame {
+public class PanelEstudiante extends javax.swing.JFrame {
 
     /**
      * Creates new form Dashboard
      */
-    public Dashboard() {
+    public PanelEstudiante() {
         initComponents();
     }
 
@@ -38,12 +38,6 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         btn_materias = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btn_alumnos = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        btn_escuelas = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        btn_nomina = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         btn_calificaciones = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         btn_Horario = new javax.swing.JPanel();
@@ -99,113 +93,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel2.add(btn_materias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 80));
 
-        btn_alumnos.setBackground(new java.awt.Color(70, 73, 75));
-        btn_alumnos.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_alumnosMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_alumnosMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_alumnosMouseExited(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Alumnos");
-        jLabel2.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout btn_alumnosLayout = new javax.swing.GroupLayout(btn_alumnos);
-        btn_alumnos.setLayout(btn_alumnosLayout);
-        btn_alumnosLayout.setHorizontalGroup(
-            btn_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_alumnosLayout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(78, 78, 78))
-        );
-        btn_alumnosLayout.setVerticalGroup(
-            btn_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_alumnosLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(33, 33, 33))
-        );
-
-        jPanel2.add(btn_alumnos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 230, 80));
-
-        btn_escuelas.setBackground(new java.awt.Color(70, 73, 75));
-        btn_escuelas.setPreferredSize(new java.awt.Dimension(230, 80));
-        btn_escuelas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_escuelasMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_escuelasMouseExited(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Escuelas");
-        jLabel3.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout btn_escuelasLayout = new javax.swing.GroupLayout(btn_escuelas);
-        btn_escuelas.setLayout(btn_escuelasLayout);
-        btn_escuelasLayout.setHorizontalGroup(
-            btn_escuelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_escuelasLayout.createSequentialGroup()
-                .addContainerGap(93, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(83, 83, 83))
-        );
-        btn_escuelasLayout.setVerticalGroup(
-            btn_escuelasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_escuelasLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(33, 33, 33))
-        );
-
-        jPanel2.add(btn_escuelas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 230, -1));
-
-        btn_nomina.setBackground(new java.awt.Color(70, 73, 75));
-        btn_nomina.setPreferredSize(new java.awt.Dimension(230, 80));
-        btn_nomina.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn_nominaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn_nominaMouseExited(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Nómina");
-        jLabel4.setAlignmentY(0.0F);
-
-        javax.swing.GroupLayout btn_nominaLayout = new javax.swing.GroupLayout(btn_nomina);
-        btn_nomina.setLayout(btn_nominaLayout);
-        btn_nominaLayout.setHorizontalGroup(
-            btn_nominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_nominaLayout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(86, 86, 86))
-        );
-        btn_nominaLayout.setVerticalGroup(
-            btn_nominaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, btn_nominaLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(35, 35, 35))
-        );
-
-        jPanel2.add(btn_nomina, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 230, -1));
-
         btn_calificaciones.setBackground(new java.awt.Color(70, 73, 75));
         btn_calificaciones.setPreferredSize(new java.awt.Dimension(230, 80));
         btn_calificaciones.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -239,7 +126,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(38, 38, 38))
         );
 
-        jPanel2.add(btn_calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 230, -1));
+        jPanel2.add(btn_calificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 230, -1));
 
         btn_Horario.setBackground(new java.awt.Color(70, 73, 75));
         btn_Horario.setPreferredSize(new java.awt.Dimension(230, 80));
@@ -277,7 +164,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(29, 29, 29))
         );
 
-        jPanel2.add(btn_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 230, -1));
+        jPanel2.add(btn_Horario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 230, -1));
 
         btn_cerrrarSesion.setBackground(new java.awt.Color(70, 73, 75));
         btn_cerrrarSesion.setPreferredSize(new java.awt.Dimension(230, 80));
@@ -315,7 +202,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel2.add(btn_cerrrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 230, -1));
+        jPanel2.add(btn_cerrrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 230, -1));
 
         btn_perfil.setBackground(new java.awt.Color(70, 73, 75));
         btn_perfil.setPreferredSize(new java.awt.Dimension(230, 80));
@@ -353,7 +240,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
-        jPanel2.add(btn_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 230, 80));
+        jPanel2.add(btn_perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 230, 80));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 230, 800));
 
@@ -423,36 +310,6 @@ public class Dashboard extends javax.swing.JFrame {
         btn_materias.setBackground(new Color(70, 73, 75));
     }//GEN-LAST:event_btn_materiasMouseExited
 
-    private void btn_alumnosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_alumnosMouseEntered
-        // TODO add your handling code here:
-        btn_alumnos.setBackground(new Color(51, 51, 51));
-    }//GEN-LAST:event_btn_alumnosMouseEntered
-
-    private void btn_alumnosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_alumnosMouseExited
-        // TODO add your handling code here:
-        btn_alumnos.setBackground(new Color(70, 73, 75));
-    }//GEN-LAST:event_btn_alumnosMouseExited
-
-    private void btn_escuelasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_escuelasMouseEntered
-        // TODO add your handling code here:
-        btn_escuelas.setBackground(new Color(51, 51, 51));
-    }//GEN-LAST:event_btn_escuelasMouseEntered
-
-    private void btn_escuelasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_escuelasMouseExited
-        // TODO add your handling code here:
-        btn_escuelas.setBackground(new Color(70, 73, 75));
-    }//GEN-LAST:event_btn_escuelasMouseExited
-
-    private void btn_nominaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nominaMouseEntered
-        // TODO add your handling code here:
-        btn_nomina.setBackground(new Color(51, 51, 51));
-    }//GEN-LAST:event_btn_nominaMouseEntered
-
-    private void btn_nominaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_nominaMouseExited
-        // TODO add your handling code here:
-        btn_nomina.setBackground(new Color(70, 73, 75));
-    }//GEN-LAST:event_btn_nominaMouseExited
-
     private void btn_calificacionesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_calificacionesMouseEntered
         // TODO add your handling code here:
         btn_calificaciones.setBackground(new Color(51, 51, 51));
@@ -519,17 +376,6 @@ public class Dashboard extends javax.swing.JFrame {
         btn_perfil.setBackground(new Color(70, 73, 75));
     }//GEN-LAST:event_btn_perfilMouseExited
 
-    private void btn_alumnosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_alumnosMouseClicked
-        // TODO add your handling code here:
-        Alumnos alumno = new Alumnos();
-        alumno.setSize(970, 720);
-        alumno.setLocation(0, 0);
-        contentPanel.removeAll();
-        contentPanel.add(alumno, BorderLayout.CENTER);
-        contentPanel.revalidate();
-        contentPanel.repaint();
-    }//GEN-LAST:event_btn_alumnosMouseClicked
-
     private void btn_HorarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_HorarioMouseClicked
         // TODO add your handling code here:
         Horario horario = new Horario();
@@ -558,38 +404,33 @@ public class Dashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Dashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelEstudiante.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+                new PanelEstudiante().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel btn_Horario;
-    private javax.swing.JPanel btn_alumnos;
     private javax.swing.JPanel btn_calificaciones;
     private javax.swing.JPanel btn_cerrrarSesion;
-    private javax.swing.JPanel btn_escuelas;
     private javax.swing.JPanel btn_materias;
-    private javax.swing.JPanel btn_nomina;
     private javax.swing.JPanel btn_perfil;
     public javax.swing.JPanel contentPanel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

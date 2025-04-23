@@ -20,24 +20,18 @@ public class PerfilProfesor extends javax.swing.JPanel {
      */
     public PerfilProfesor() {
         initComponents();
-        edadComboBoxPerfil.setVisible(false);
-        generoComboBoxPerfil.setVisible(false);
-        nacionalidadComboBoxPerfil.setVisible(false);
-        centroComboBoxPerfil.setVisible(false);
-        carreraComboBoxPerfil.setVisible(false);
         guardarPerfilBtn.setVisible(false);
         cancelarPerfilBtn.setVisible(false);
         nombrePerfilTextField.setEditable(false);
         codigoPerfilTextField.setEditable(false);
         nipPerfilTextField.setEditable(false);
-        edadPerfilTextField.setEditable(false);
-        generoPerfilTextField.setEditable(false);
-        nacionalidadPerfilTextField.setEditable(false);
         correoPerfilTextField.setEditable(false);
-        centroPerfilTextField.setEditable(false);
-        carreraPerfilTextField.setEditable(false);
         rolTextField.setEditable(false);
         rolComboBox.setVisible(false);
+        tituloPerfilTextField.setEditable(false);
+        departamentoTextField.setEditable(false);
+        centroTextField.setEditable(false);
+        centroComboBox.setVisible(false);
     }
 
     /**
@@ -54,30 +48,22 @@ public class PerfilProfesor extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         codigoPerfilTextField = new javax.swing.JTextField();
         nombrePerfilTextField = new javax.swing.JTextField();
-        edadPerfilTextField = new javax.swing.JTextField();
         nipPerfilTextField = new javax.swing.JTextField();
-        generoPerfilTextField = new javax.swing.JTextField();
-        nacionalidadPerfilTextField = new javax.swing.JTextField();
         correoPerfilTextField = new javax.swing.JTextField();
-        centroPerfilTextField = new javax.swing.JTextField();
-        carreraPerfilTextField = new javax.swing.JTextField();
         cancelarPerfilBtn = new javax.swing.JButton();
-        edadComboBoxPerfil = new javax.swing.JComboBox<>();
-        generoComboBoxPerfil = new javax.swing.JComboBox<>();
-        nacionalidadComboBoxPerfil = new javax.swing.JComboBox<>();
-        centroComboBoxPerfil = new javax.swing.JComboBox<>();
-        carreraComboBoxPerfil = new javax.swing.JComboBox<>();
         editarPerfilBtn = new javax.swing.JButton();
         guardarPerfilBtn = new javax.swing.JButton();
-        jLabel10 = new javax.swing.JLabel();
         rolTextField = new javax.swing.JTextField();
         rolComboBox = new javax.swing.JComboBox<>();
+        tituloPerfilTextField = new javax.swing.JTextField();
+        departamentoTextField = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        centroTextField = new javax.swing.JTextField();
+        centroComboBox = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -103,32 +89,20 @@ public class PerfilProfesor extends javax.swing.JPanel {
         jLabel4.setBackground(new java.awt.Color(255, 255, 255));
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Edad");
+        jLabel4.setText("Título");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, -1, -1));
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Género");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Nacionalidad");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
+        jLabel5.setText("Departamento");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Correo");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
-
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Centro");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 410, -1, -1));
+        jLabel7.setText("Centro Universitario");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -147,40 +121,15 @@ public class PerfilProfesor extends javax.swing.JPanel {
         nombrePerfilTextField.setFocusable(false);
         add(nombrePerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 41, 500, -1));
 
-        edadPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
-        edadPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
-        edadPerfilTextField.setBorder(null);
-        add(edadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
-
         nipPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         nipPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         nipPerfilTextField.setBorder(null);
         add(nipPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 500, -1));
 
-        generoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
-        generoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
-        generoPerfilTextField.setBorder(null);
-        add(generoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 154, -1));
-
-        nacionalidadPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
-        nacionalidadPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
-        nacionalidadPerfilTextField.setBorder(null);
-        add(nacionalidadPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 500, -1));
-
         correoPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
         correoPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
         correoPerfilTextField.setBorder(null);
         add(correoPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, 500, -1));
-
-        centroPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
-        centroPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
-        centroPerfilTextField.setBorder(null);
-        add(centroPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 410, 500, 20));
-
-        carreraPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
-        carreraPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
-        carreraPerfilTextField.setBorder(null);
-        add(carreraPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 500, -1));
 
         cancelarPerfilBtn.setBackground(new java.awt.Color(51, 51, 51));
         cancelarPerfilBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,36 +140,6 @@ public class PerfilProfesor extends javax.swing.JPanel {
             }
         });
         add(cancelarPerfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 70, -1, -1));
-
-        edadComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
-        edadComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        edadComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90" }));
-        add(edadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 50, 20));
-
-        generoComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
-        generoComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        generoComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
-        add(generoComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 140, 20));
-
-        nacionalidadComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
-        nacionalidadComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        nacionalidadComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "España", "Guatemala", "Haití", "Honduras", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "República Dominicana", "Uruguay", "Venezuela" }));
-        add(nacionalidadComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 500, 20));
-
-        centroComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
-        centroComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        centroComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Centro Universitario de Arte, Arquitectura y Diseñio (CUAAD)", "Centro Universitario de Ciencias Biologicas y Agropecuarias (CUCBA)", "Centro Universitario de Ciencias Economico-Administrativas (CUCEA)", "Centro Universitario de Ciencias Exactas e ingenierias (CUCEI)", "Centro Universitario de Ciencias de la Salud (CUCS)", "Centro Universitario de Ciencias Sociales y Humanidades (CUCSH)", "Centro Universitario de Tonala (CUTonala)", "Centro Universitario de Tlajomulco (CUTlajomulco)", "Centro Universitario de Tlaquepaque (CUTlaquepaque)", "Centro Universitario de Los Altos (CUAltos)", "Centro Universitario de Chapala (CUChapala)", "Centro Universitario de la Cienega (CUCienega)", "Centro Universitario de la Costa (CUCosta)" }));
-        centroComboBoxPerfil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                centroComboBoxPerfilActionPerformed(evt);
-            }
-        });
-        add(centroComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, 500, 20));
-
-        carreraComboBoxPerfil.setBackground(new java.awt.Color(51, 51, 51));
-        carreraComboBoxPerfil.setForeground(new java.awt.Color(255, 255, 255));
-        carreraComboBoxPerfil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(carreraComboBoxPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 480, 500, -1));
 
         editarPerfilBtn.setBackground(new java.awt.Color(51, 51, 51));
         editarPerfilBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -242,12 +161,6 @@ public class PerfilProfesor extends javax.swing.JPanel {
         });
         add(guardarPerfilBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(779, 38, -1, -1));
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Carrera");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 480, -1, -1));
-
         rolTextField.setBackground(new java.awt.Color(51, 51, 51));
         rolTextField.setForeground(new java.awt.Color(255, 255, 255));
         rolTextField.setBorder(null);
@@ -257,6 +170,37 @@ public class PerfilProfesor extends javax.swing.JPanel {
         rolComboBox.setForeground(new java.awt.Color(255, 255, 255));
         rolComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Estudiante", "Profesor", "Administrador" }));
         add(rolComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 550, 490, -1));
+
+        tituloPerfilTextField.setBackground(new java.awt.Color(51, 51, 51));
+        tituloPerfilTextField.setForeground(new java.awt.Color(255, 255, 255));
+        tituloPerfilTextField.setBorder(null);
+        add(tituloPerfilTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 500, -1));
+
+        departamentoTextField.setBackground(new java.awt.Color(51, 51, 51));
+        departamentoTextField.setForeground(new java.awt.Color(255, 255, 255));
+        departamentoTextField.setBorder(null);
+        add(departamentoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 500, -1));
+
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Correo");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, -1, -1));
+
+        centroTextField.setBackground(new java.awt.Color(51, 51, 51));
+        centroTextField.setForeground(new java.awt.Color(255, 255, 255));
+        centroTextField.setBorder(null);
+        add(centroTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 500, -1));
+
+        centroComboBox.setBackground(new java.awt.Color(51, 51, 51));
+        centroComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        centroComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Centro Universitario de Arte, Arquitectura y Diseñio (CUAAD)", "Centro Universitario de Ciencias Biologicas y Agropecuarias (CUCBA)", "Centro Universitario de Ciencias Economico-Administrativas (CUCEA)", "Centro Universitario de Ciencias Exactas e ingenierias (CUCEI)", "Centro Universitario de Ciencias de la Salud (CUCS)", "Centro Universitario de Ciencias Sociales y Humanidades (CUCSH)", "Centro Universitario de Tonala (CUTonala)", "Centro Universitario de Tlajomulco (CUTlajomulco)", "Centro Universitario de Tlaquepaque (CUTlaquepaque)", "Centro Universitario de Los Altos (CUAltos)", "Centro Universitario de Chapala (CUChapala)", "Centro Universitario de la Cienega (CUCienega)", "Centro Universitario de la Costa (CUCosta)" }));
+        centroComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                centroComboBoxActionPerformed(evt);
+            }
+        });
+        add(centroComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 430, 490, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cancelarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarPerfilBtnActionPerformed
@@ -270,209 +214,34 @@ public class PerfilProfesor extends javax.swing.JPanel {
         codigoPerfilTextField.setForeground(new Color(255, 255, 255));
         nipPerfilTextField.setFocusable(false);
         nipPerfilTextField.setForeground(new Color(255, 255, 255));
-        edadComboBoxPerfil.setVisible(false);
-        edadPerfilTextField.setVisible(true);
-        generoComboBoxPerfil.setVisible(false);
-        generoPerfilTextField.setVisible(true);
-        nacionalidadComboBoxPerfil.setVisible(false);
-        nacionalidadPerfilTextField.setVisible(true);
         correoPerfilTextField.setFocusable(false);
         correoPerfilTextField.setForeground(new Color(255, 255, 255));
-        centroComboBoxPerfil.setVisible(false);
-        centroPerfilTextField.setVisible(true);
-        carreraComboBoxPerfil.setVisible(false);
-        carreraPerfilTextField.setVisible(true);
         rolComboBox.setVisible(false);
         rolTextField.setVisible(true);
         nombrePerfilTextField.setEditable(false);
         codigoPerfilTextField.setEditable(false);
         nipPerfilTextField.setEditable(false);
-        edadPerfilTextField.setEditable(false);
-        generoPerfilTextField.setEditable(false);
-        nacionalidadPerfilTextField.setEditable(false);
         correoPerfilTextField.setEditable(false);
-        centroPerfilTextField.setEditable(false);
-        carreraPerfilTextField.setEditable(false);
         rolTextField.setEditable(false);
+        tituloPerfilTextField.setEditable(false);
+        departamentoTextField.setEditable(false);
+        centroTextField.setEditable(false);
     }//GEN-LAST:event_cancelarPerfilBtnActionPerformed
-
-    private void centroComboBoxPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_centroComboBoxPerfilActionPerformed
-        // TODO add your handling code here:
-        int seleccionado = centroComboBoxPerfil.getSelectedIndex();
-        switch (seleccionado) {
-            case 0 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Licenciatura en Arquitectura");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Escenicas para la Expresion Dancistica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Escenicas para la Expresion Teatral");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Visuales para la Expresion Fotografica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Visuales para la Expresion Plastica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio de Interiores y Ambientacion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio de Modas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio Industrial");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio para la Comunicacion Grafica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio, Arte y Tecnologias Interactivas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Musica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Urbanistica y Medio Ambiente");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Escenicas para la Expresion Dancistica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Escenicas para la Expresion Teatral");
-                carreraComboBoxPerfil.addItem("Licenciatura en Artes Visuales para la Expresion Plastica");
-                carreraComboBoxPerfil.addItem("Tecnico en Musica");
-            }
-            case 1 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Ingeniero Agronomo");
-                carreraComboBoxPerfil.addItem("Licenciatura en Biologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Ciencia de los Alimentos");
-                carreraComboBoxPerfil.addItem("Licenciatura en Medicina Veterinaria y Zootecnia");
-            }
-            case 2 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Ingenieria en Negocios");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administracion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administracion Financiera y Sistemas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administracion Gubernamental y Politicas Publicas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Contaduria Publica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Economia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Gestion de Negocios Gastronomicos");
-                carreraComboBoxPerfil.addItem("Licenciatura en Gestion y Economía Ambiental");
-                carreraComboBoxPerfil.addItem("Licenciatura en Mercadotecnia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Negocios Internacionales");
-                carreraComboBoxPerfil.addItem("Licenciatura en Recursos Humanos");
-                carreraComboBoxPerfil.addItem("Licenciatura en Relaciones Publicas y Comunicacion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Tecnologias de la Informacion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Turismo");
-            }
-            case 3 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Ingenieria Biomedica");
-                carreraComboBoxPerfil.addItem("Ingenieria Civil");
-                carreraComboBoxPerfil.addItem("Ingenieria en Alimentos y Biotecnologia");
-                carreraComboBoxPerfil.addItem("Ingenieria en Computacion");
-                carreraComboBoxPerfil.addItem("Ingenieria en Comunicaciones y Electronica");
-                carreraComboBoxPerfil.addItem("Ingenieria en Logistica y Transporte");
-                carreraComboBoxPerfil.addItem("Ingenieria en Topografia Geomatica");
-                carreraComboBoxPerfil.addItem("Ingenieria Fotonica");
-                carreraComboBoxPerfil.addItem("Ingenieria Industrial");
-                carreraComboBoxPerfil.addItem("Ingenieria Informatica");
-                carreraComboBoxPerfil.addItem("Ingenieria Mecanica Electrica");
-                carreraComboBoxPerfil.addItem("Ingenieria Quimica");
-                carreraComboBoxPerfil.addItem("Ingenieria Robotica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Ciencia de Materiales");
-                carreraComboBoxPerfil.addItem("Licenciatura en Fisica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Matematicas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Quimica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Quimico Farmaceutico Biologo");
-            }
-            case 4 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Carrera de Enfermeria");
-                carreraComboBoxPerfil.addItem("Carrera de Enfermeria (Semiescolarizado)");
-                carreraComboBoxPerfil.addItem("Licenciatura en Ciencias Forenses");
-                carreraComboBoxPerfil.addItem("Licenciatura en Cirujano Dentista");
-                carreraComboBoxPerfil.addItem("Licenciatura en Cultura Fisica y Deportes");
-                carreraComboBoxPerfil.addItem("Licenciatura en Enfermeria");
-                carreraComboBoxPerfil.addItem("Licenciatura en Nutricion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Podologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Psicologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Terapia Física");
-                carreraComboBoxPerfil.addItem("Medico Cirujano y Partero");
-                carreraComboBoxPerfil.addItem("Tecnico Superior Universitario en Protesis Dental");
-                carreraComboBoxPerfil.addItem("Tecnico Superior Universitario en Radiologia e Imagen");
-                carreraComboBoxPerfil.addItem("Tecnico Superior Universitario en Terapia Fisica");
-                carreraComboBoxPerfil.addItem("Tecnico Superior Universitario en Terapia Respiratoria");
-            }
-            case 5 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Abogado");
-                carreraComboBoxPerfil.addItem("Licenciatura en Antropologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Comunicacion Publica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Criminologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Didactica del Frances como Lengua Extranjera");
-                carreraComboBoxPerfil.addItem("Licenciatura en Docencia del Ingles (Modalidad abierta y a distancia)");
-                carreraComboBoxPerfil.addItem("Licenciatura en Docencia del Ingles como Lengua Extranjera");
-                carreraComboBoxPerfil.addItem("Licenciatura en Escritura Creativa");
-                carreraComboBoxPerfil.addItem("Licenciatura en Estudios Politicos y Gobierno");
-                carreraComboBoxPerfil.addItem("Licenciatura en Filosofia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Geografia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Historia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Letras Hispanicas");
-                carreraComboBoxPerfil.addItem("Licenciatura en Relaciones Internacionales");
-                carreraComboBoxPerfil.addItem("Licenciatura en Sociologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Trabajo Social");
-                carreraComboBoxPerfil.addItem("Nivelacion de la Licenciatura en Trabajos Social");
-            }
-            case 6 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Abogado");
-                carreraComboBoxPerfil.addItem("Ingenieria en Ciencias Computacionales");
-                carreraComboBoxPerfil.addItem("Ingenieria en Energia");
-                carreraComboBoxPerfil.addItem("Ingenieria en Nanotecnologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administración de Negocios");
-                carreraComboBoxPerfil.addItem("Licenciatura en Arquitectura");
-                carreraComboBoxPerfil.addItem("Licenciatura en Ciencias Forenses");
-                carreraComboBoxPerfil.addItem("Licenciatura en Contaduria Publica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Disenio de Artesania");
-                carreraComboBoxPerfil.addItem("Licenciatura en Estudios Liberales");
-                carreraComboBoxPerfil.addItem("Licenciatura en Gerontologia");
-                carreraComboBoxPerfil.addItem("Licenciatura en Historia del Arte");
-                carreraComboBoxPerfil.addItem("Licenciatura en Nutricion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Salud Publica");
-                carreraComboBoxPerfil.addItem("Medico Cirujano y Partero");
-            }
-            case 7 -> {
-                carreraComboBoxPerfil.removeAllItems();
-                carreraComboBoxPerfil.addItem("Ingenieria Biomedica");
-                carreraComboBoxPerfil.addItem("Ingenieria Civil (CUTlajomulco)");
-                carreraComboBoxPerfil.addItem("Ingenieria en Biotecnologia");
-                carreraComboBoxPerfil.addItem("Ingenieria en Diseño Industrial (Sede Cutlajomulco)");
-                carreraComboBoxPerfil.addItem("Ingenieria Mecatronica (Sede Cutlajomulco)");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administracion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Administracion y Gestion Empresarial");
-                carreraComboBoxPerfil.addItem("Licenciatura en Construccion de la Paz y Seguridad");
-                carreraComboBoxPerfil.addItem("Licenciatura en Enfermeria");
-                carreraComboBoxPerfil.addItem("Licenciatura en Negocios Internacionales");
-                carreraComboBoxPerfil.addItem("Licenciatura en Nutricion");
-                carreraComboBoxPerfil.addItem("Licenciatura en Terapia Fisica");
-                carreraComboBoxPerfil.addItem("Licenciatura en Terapia Fisica (CUTlajomulco)");
-                carreraComboBoxPerfil.addItem("Medico Cirujano y Partero");
-            }
-            default -> {
-            }
-        }
-    }//GEN-LAST:event_centroComboBoxPerfilActionPerformed
 
     private void editarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarPerfilBtnActionPerformed
         // TODO add your handling code here:
+        codigoPerfilTextField.setFocusable(true);
+        codigoPerfilTextField.setForeground(new Color(0, 204, 0));
+        codigoPerfilTextField.setEditable(true);
         nombrePerfilTextField.setFocusable(true);
         nombrePerfilTextField.setForeground(new Color(0, 204, 0));
         nombrePerfilTextField.setEditable(true);
         nipPerfilTextField.setFocusable(true);
         nipPerfilTextField.setForeground(new Color(0, 204, 0));
         nipPerfilTextField.setEditable(true);
-        edadPerfilTextField.setEditable(true);
-        edadComboBoxPerfil.setSelectedItem(edadPerfilTextField.getText());
-        edadComboBoxPerfil.setVisible(true);
-        edadPerfilTextField.setVisible(false);
-        generoComboBoxPerfil.setVisible(true);
-        generoPerfilTextField.setVisible(false);
-        generoPerfilTextField.setEditable(true);
-        generoComboBoxPerfil.setSelectedItem(generoPerfilTextField.getText());
-        nacionalidadComboBoxPerfil.setVisible(true);
-        nacionalidadPerfilTextField.setVisible(false);
-        nacionalidadPerfilTextField.setEditable(true);
-        nacionalidadComboBoxPerfil.setSelectedItem(nacionalidadPerfilTextField.getText());
         correoPerfilTextField.setFocusable(true);
         correoPerfilTextField.setForeground(new Color(0, 204, 0));
         correoPerfilTextField.setEditable(true);
-        centroComboBoxPerfil.setVisible(true);
-        centroPerfilTextField.setVisible(false);
-        centroPerfilTextField.setEditable(true);
-        centroComboBoxPerfil.setSelectedItem(centroPerfilTextField.getText());
-        carreraComboBoxPerfil.setVisible(true);
-        carreraPerfilTextField.setVisible(false);
-        carreraPerfilTextField.setEditable(true);
-        carreraComboBoxPerfil.setSelectedItem(carreraPerfilTextField.getText());
         editarPerfilBtn.setVisible(false);
         cancelarPerfilBtn.setVisible(true);
         guardarPerfilBtn.setVisible(true);
@@ -480,6 +249,16 @@ public class PerfilProfesor extends javax.swing.JPanel {
         rolTextField.setVisible(false);
         rolTextField.setEditable(true);
         rolComboBox.setSelectedItem(rolTextField.getText());
+        tituloPerfilTextField.setFocusable(true);
+        tituloPerfilTextField.setForeground(new Color(0, 204, 0));
+        tituloPerfilTextField.setEditable(true);
+        departamentoTextField.setFocusable(true);
+        departamentoTextField.setForeground(new Color(0, 204, 0));
+        departamentoTextField.setEditable(true);
+        centroComboBox.setVisible(true);
+        centroTextField.setVisible(false);
+        centroTextField.setEditable(true);
+        centroComboBox.setSelectedItem(centroTextField.getText());
     }//GEN-LAST:event_editarPerfilBtnActionPerformed
 
     private void guardarPerfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarPerfilBtnActionPerformed
@@ -490,12 +269,7 @@ public class PerfilProfesor extends javax.swing.JPanel {
         actualPerfil.nombrePerfilTextField.setText(nombrePerfilTextField.getText());
         actualPerfil.codigoPerfilTextField.setText(codigoPerfilTextField.getText());
         actualPerfil.nipPerfilTextField.setText(nipPerfilTextField.getText());
-        actualPerfil.edadPerfilTextField.setText((String) edadComboBoxPerfil.getSelectedItem());
-        actualPerfil.generoPerfilTextField.setText((String) generoComboBoxPerfil.getSelectedItem());
-        actualPerfil.nacionalidadPerfilTextField.setText((String) nacionalidadComboBoxPerfil.getSelectedItem());
         actualPerfil.correoPerfilTextField.setText(correoPerfilTextField.getText());
-        actualPerfil.centroPerfilTextField.setText((String) centroComboBoxPerfil.getSelectedItem());
-        actualPerfil.carreraPerfilTextField.setText((String) carreraComboBoxPerfil.getSelectedItem());
         actualPerfil.rolTextField.setText((String) rolComboBox.getSelectedItem());
         
         try {
@@ -506,28 +280,8 @@ public class PerfilProfesor extends javax.swing.JPanel {
             this.nombrePerfilTextField.setForeground(new Color(255, 255, 255));       
             this.nipPerfilTextField.setFocusable(false);
             this.nipPerfilTextField.setForeground(new Color(255, 255, 255));
-            this.edadComboBoxPerfil.setVisible(false);
-            this.edadPerfilTextField.setText((String) this.edadComboBoxPerfil.getSelectedItem());
-            this.edadPerfilTextField.setVisible(true);
-            this.edadPerfilTextField.setEditable(false);
-            this.generoComboBoxPerfil.setVisible(false);
-            this.generoPerfilTextField.setText((String) this.generoComboBoxPerfil.getSelectedItem());
-            this.generoPerfilTextField.setVisible(true);
-            this.generoPerfilTextField.setEditable(false);
-            this.nacionalidadComboBoxPerfil.setVisible(false);
-            this.nacionalidadPerfilTextField.setText((String) this.nacionalidadComboBoxPerfil.getSelectedItem());
-            this.nacionalidadPerfilTextField.setVisible(true);
-            this.nacionalidadPerfilTextField.setEditable(false);
             this.correoPerfilTextField.setFocusable(false);
             this.correoPerfilTextField.setForeground(new Color(255, 255, 255));
-            this.centroComboBoxPerfil.setVisible(false);
-            this.centroPerfilTextField.setText((String) this.centroComboBoxPerfil.getSelectedItem());
-            this.centroPerfilTextField.setVisible(true);
-            this.centroPerfilTextField.setEditable(false);
-            this.carreraComboBoxPerfil.setVisible(false);
-            this.carreraPerfilTextField.setText((String) this.carreraComboBoxPerfil.getSelectedItem());
-            this.carreraPerfilTextField.setVisible(true);
-            this.carreraPerfilTextField.setEditable(false);
             this.rolComboBox.setVisible(false);
             this.rolTextField.setText((String) this.rolComboBox.getSelectedItem());
             this.rolTextField.setVisible(true);
@@ -537,36 +291,33 @@ public class PerfilProfesor extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_guardarPerfilBtnActionPerformed
 
+    private void centroComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_centroComboBoxActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_centroComboBoxActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton cancelarPerfilBtn;
-    public javax.swing.JComboBox<String> carreraComboBoxPerfil;
-    public javax.swing.JTextField carreraPerfilTextField;
-    public javax.swing.JComboBox<String> centroComboBoxPerfil;
-    public javax.swing.JTextField centroPerfilTextField;
+    public javax.swing.JComboBox<String> centroComboBox;
+    public javax.swing.JTextField centroTextField;
     public javax.swing.JTextField codigoPerfilTextField;
     public javax.swing.JTextField correoPerfilTextField;
-    public javax.swing.JComboBox<String> edadComboBoxPerfil;
-    public javax.swing.JTextField edadPerfilTextField;
+    public javax.swing.JTextField departamentoTextField;
     public javax.swing.JButton editarPerfilBtn;
-    public javax.swing.JComboBox<String> generoComboBoxPerfil;
-    public javax.swing.JTextField generoPerfilTextField;
     public javax.swing.JButton guardarPerfilBtn;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public javax.swing.JComboBox<String> nacionalidadComboBoxPerfil;
-    public javax.swing.JTextField nacionalidadPerfilTextField;
     public javax.swing.JTextField nipPerfilTextField;
     public javax.swing.JTextField nombrePerfilTextField;
     public javax.swing.JComboBox<String> rolComboBox;
     public javax.swing.JTextField rolTextField;
+    public javax.swing.JTextField tituloPerfilTextField;
     // End of variables declaration//GEN-END:variables
 }

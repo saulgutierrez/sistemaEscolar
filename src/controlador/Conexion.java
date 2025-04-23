@@ -197,7 +197,7 @@ public class Conexion {
                 Object correo;
                 Object centro;
                 Object rol;
-                PerfilEstudiante perfil = new PerfilEstudiante();
+                PerfilProfesor perfil = new PerfilProfesor();
                 perfil.setSize(970, 720);
                 perfil.setLocation(0, 0);
 
@@ -210,13 +210,15 @@ public class Conexion {
                     titulo = result.getObject(i+4);
                     departamento = result.getObject(i+5);
                     correo = result.getObject(i+6);
-                    centro = result.getObject(i+8);
+                    centro = result.getObject(i+7);
                     perfil.nombrePerfilTextField.setText(nombre.toString());
                     perfil.codigoPerfilTextField.setText(codigo.toString());
                     perfil.nipPerfilTextField.setText(nip.toString());
                     perfil.correoPerfilTextField.setText(correo.toString());
-                    perfil.centroPerfilTextField.setText(centro.toString());
                     perfil.rolTextField.setText(rol.toString());
+                    perfil.tituloPerfilTextField.setText(titulo.toString());
+                    perfil.departamentoTextField.setText(departamento.toString());
+                    perfil.centroTextField.setText(centro.toString());
                     d.contentPanel.removeAll();
                     d.contentPanel.add(perfil, BorderLayout.CENTER);
                     d.contentPanel.revalidate();
@@ -234,23 +236,19 @@ public class Conexion {
                 Object nombre = perfilActualizar.nombrePerfilTextField.getText();
                 int codigo = Integer.parseInt(perfilActualizar.codigoPerfilTextField.getText());
                 Object nip = perfilActualizar.nipPerfilTextField.getText();
-                Object edad = perfilActualizar.edadPerfilTextField.getText();
-                Object genero = perfilActualizar.generoPerfilTextField.getText();
-                Object nacionalidad = perfilActualizar.nacionalidadPerfilTextField.getText();
+                Object titulo = perfilActualizar.tituloPerfilTextField.getText();
+                Object departamento = perfilActualizar.departamentoTextField.getText();
                 Object correo = perfilActualizar.correoPerfilTextField.getText();
-                Object centro = perfilActualizar.centroPerfilTextField.getText();
-                Object carrera = perfilActualizar.carreraPerfilTextField.getText();
-                String sql = "UPDATE estudiante SET rol = ?, nombre = ?, nip = ?, edad = ?, genero = ?, nacionalidad = ?, correo = ?, centro = ?, carrera = ? WHERE codigo = '"+codigo+"'";
+                Object centro = perfilActualizar.centroTextField.getText();
+                String sql = "UPDATE profesor SET rol = ?, nombre = ?, nip = ?, titulo = ?, departamento = ?, correo = ?, centro_universitario = ? WHERE codigo = '"+codigo+"'";
                 try (PreparedStatement statement = conn.prepareStatement(sql)) {
                     statement.setString(1, rol.toString().trim());
                     statement.setString(2, nombre.toString().trim());
                     statement.setString(3, nip.toString().trim());
-                    statement.setString(4, edad.toString().trim());
-                    statement.setString(5, genero.toString().trim());
-                    statement.setString(6, nacionalidad.toString().trim());
-                    statement.setString(7, correo.toString().trim());
-                    statement.setString(8, centro.toString().trim());
-                    statement.setString(9, carrera.toString().trim());
+                    statement.setString(4, titulo.toString().trim());
+                    statement.setString(5, departamento.toString().trim());
+                    statement.setString(6, correo.toString().trim());
+                    statement.setString(7, centro.toString().trim());
                     
                     int result = statement.executeUpdate(); 
                     if (result > 0) {

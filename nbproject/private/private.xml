@@ -5,12 +5,14 @@
         <group>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/modelo/Profesor.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/modelo/Estudiante.java</file>
+            <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/PerfilEstudiante.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/Registro.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/PanelEstudiante.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/Login.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/ConsultaMaterias.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/Horario.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/PanelProfesor.java</file>
+            <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/vista/PerfilProfesor.java</file>
             <file>file:/C:/Users/USER/Desktop/Nueva%20carpeta/sistemaEscolar-main/src/controlador/Conexion.java</file>
         </group>
     </open-files>
